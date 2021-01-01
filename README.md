@@ -1,3 +1,42 @@
+# Image Uploader
+
+## Flow
+
+- create next.js app
+```
+yarn create next-app image-uploader-serverless
+```
+
+- move folder
+```
+cd image-uploader-serverless
+```
+
+- get modules
+```
+yarn add node-sass@4.14.1 @aws-amplify/core @aws-amplify/auth @aws-amplify/api @aws-amplify/pubsub @aws-amplify/storage
+yarn add -D @types/node @types/react @types/react-dom typescript
+```
+
+- change command
+```
+"build": "next build",
+```
+```
+"build": "next build && next export",
+```
+
+- update next.js
+
+- init amplify
+```
+amplify init
+```
+Source Directory Path:  src
+Distribution Directory Path: out
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
