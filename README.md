@@ -73,11 +73,17 @@ type Image @model @auth(rules: [{ allow: owner }]) {
 初回以降はapiを自動でupdateするかどうか聞かれる。
 apiを編集している場合は気をつける(2敗)
 ```
-# 初回のみ
-amplify push --y
-# それ以降
 amplify push
 ```
+
+- Storageを追加する
+```
+amplify add storage
+```
+Please provide a friendly name for your resource that will be used to label this category in the project: `imageUploaderStorage`  
+Please provide bucket name: `imageuploaderbucketxxxxxxxxxxxxxxxxxxxxx`  
+Who should have access: `Auth users only`  
+What kind of access do you want for Authenticated users? `create/update, read, delete`  
 
 -----
 
