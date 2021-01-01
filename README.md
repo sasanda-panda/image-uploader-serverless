@@ -85,6 +85,13 @@ Please provide bucket name: `imageuploaderbucketxxxxxxxxxxxxxxxxxxxxx`
 Who should have access: `Auth users only`  
 What kind of access do you want for Authenticated users? `create/update, read, delete`  
 
+- hostingを追加する
+```
+amplify add hosting
+```
+Select the plugin module to execute `Hosting with Amplify Console (Managed hosting with custom domains, Continuous deployment)`  
+Choose a type `Manual deployment`  
+
 -----
 
 
