@@ -48,6 +48,36 @@ Do you want to configure advanced settings? `No, I am done.`
 amplify push --y
 ```
 
+- Apiを追加する (GraphQL)
+```
+amplify add api
+```
+Please select from one of the below mentioned services: `GraphQL`  
+Provide API name: `imageUploaderApi`  
+Choose the default authorization type for the API `Amazon Cognito User Pool`  
+Do you want to configure advanced settings for the GraphQL API `No, I am done.`  
+Do you have an annotated GraphQL schema? `No` 
+Choose a schema template: `Single object with fields (e.g., “Todo” with ID, name, description)`  
+Do you want to edit the schema now? `Yes`
+
+- スキーマを変更する
+```
+# schema.graphql
+type Image @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  url: String!
+}
+```
+
+- Apiをプッシュする
+初回以降はapiを自動でupdateするかどうか聞かれる。
+apiを編集している場合は気をつける(2敗)
+```
+# 初回のみ
+amplify push --y
+# それ以降
+amplify push
+```
 
 -----
 

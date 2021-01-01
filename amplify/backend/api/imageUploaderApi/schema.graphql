@@ -1,0 +1,12 @@
+# MEMO: https://docs.amplify.aws/cli/graphql-transformer/auth#definition
+
+type Image @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  url: String!
+}
+
+# type Todo @model {
+#   id: ID!
+#   name: String!
+#   description: String
+# }
