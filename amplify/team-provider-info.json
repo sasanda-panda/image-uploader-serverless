@@ -10,6 +10,11 @@
       "StackName": "amplify-imageuploader-dev-45058",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:942404649943:stack/amplify-imageuploader-dev-45058/ad185730-4c6a-11eb-9c51-0a6a4edc26e4",
       "AmplifyAppId": "d34emk2h5dlcxa"
+    },
+    "categories": {
+      "auth": {
+        "imageuploader5db02deb": {}
+      }
     }
   }
 }

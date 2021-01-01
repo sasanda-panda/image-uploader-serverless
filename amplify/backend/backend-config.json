@@ -1,1 +1,10 @@
-{}
+{
+  "auth": {
+    "imageuploader5db02deb": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

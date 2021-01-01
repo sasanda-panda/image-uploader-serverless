@@ -2,23 +2,23 @@
 
 ## Flow
 
-- create next.js app
+- Next.jsアプリを作成する
 ```
 yarn create next-app image-uploader-serverless
 ```
 
-- move folder
+- プロジェクトフォルダへ移動する
 ```
 cd image-uploader-serverless
 ```
 
-- get modules
+- 必要なモジュールをインストールする
 ```
 yarn add node-sass@4.14.1 @aws-amplify/core @aws-amplify/auth @aws-amplify/api @aws-amplify/pubsub @aws-amplify/storage
 yarn add -D @types/node @types/react @types/react-dom typescript
 ```
 
-- change command
+- package.jsonのコマンドを変更する
 ```
 "build": "next build",
 ```
@@ -26,15 +26,30 @@ yarn add -D @types/node @types/react @types/react-dom typescript
 "build": "next build && next export",
 ```
 
-- update next.js
+- 調整する
 
-- init amplify
+- Amplifyを追加する
 ```
 amplify init
 ```
-Source Directory Path:  src
-Distribution Directory Path: out
+Source Directory Path: `src`  
+Distribution Directory Path: `out`
 
+- Authを追加する
+```
+amplify add auth
+```
+Do you want to use the default authentication and security configuration? `Default configuration`  
+How do you want users to be able to sign in? `Email`  
+Do you want to configure advanced settings? `No, I am done.`
+
+- Authをプッシュする
+```
+amplify push --y
+```
+
+
+-----
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
