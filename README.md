@@ -92,6 +92,17 @@ amplify add hosting
 Select the plugin module to execute `Hosting with Amplify Console (Managed hosting with custom domains, Continuous deployment)`  
 Choose a type `Manual deployment`  
 
+- next.jsの開発を開始する
+```
+yarn dev
+```
+
+- Amplify (page/_app.tsx)
+
+-  (page/profile.tsx)
+
+-  (page/index.tsxを作成する)
+
 -----
 
 
