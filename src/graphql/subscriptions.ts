@@ -6,7 +6,7 @@ export const onCreateImage = /* GraphQL */ `
   subscription OnCreateImage($owner: String!) {
     onCreateImage(owner: $owner) {
       id
-      url
+      key
       createdAt
       updatedAt
       owner
@@ -17,7 +17,7 @@ export const onUpdateImage = /* GraphQL */ `
   subscription OnUpdateImage($owner: String!) {
     onUpdateImage(owner: $owner) {
       id
-      url
+      key
       createdAt
       updatedAt
       owner
@@ -28,7 +28,7 @@ export const onDeleteImage = /* GraphQL */ `
   subscription OnDeleteImage($owner: String!) {
     onDeleteImage(owner: $owner) {
       id
-      url
+      key
       createdAt
       updatedAt
       owner

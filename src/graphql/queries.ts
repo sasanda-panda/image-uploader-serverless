@@ -6,7 +6,7 @@ export const getImage = /* GraphQL */ `
   query GetImage($id: ID!) {
     getImage(id: $id) {
       id
-      url
+      key
       createdAt
       updatedAt
       owner
@@ -22,7 +22,7 @@ export const listImages = /* GraphQL */ `
     listImages(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        url
+        key
         createdAt
         updatedAt
         owner

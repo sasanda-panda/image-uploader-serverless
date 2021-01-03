@@ -2,7 +2,7 @@
 
 type Image @model @auth(rules: [{ allow: owner }]) {
   id: ID!
-  url: String!
+  key: String!
 }
 
 # type Todo @model {

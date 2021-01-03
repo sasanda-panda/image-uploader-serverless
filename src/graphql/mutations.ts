@@ -9,7 +9,7 @@ export const createImage = /* GraphQL */ `
   ) {
     createImage(input: $input, condition: $condition) {
       id
-      url
+      key
       createdAt
       updatedAt
       owner
@@ -23,7 +23,7 @@ export const updateImage = /* GraphQL */ `
   ) {
     updateImage(input: $input, condition: $condition) {
       id
-      url
+      key
       createdAt
       updatedAt
       owner
@@ -37,7 +37,7 @@ export const deleteImage = /* GraphQL */ `
   ) {
     deleteImage(input: $input, condition: $condition) {
       id
-      url
+      key
       createdAt
       updatedAt
       owner

@@ -17,7 +17,7 @@ type AuthenticatedUserType = {
 type ImageType = {
   owner: string,
   id: string,
-  url: string
+  key: string
 }
 
 const Home: NextPage = () => {
@@ -72,11 +72,12 @@ const Home: NextPage = () => {
 
   const createItem = async (eve) => {
     try {
-      const id = (Math.floor(Math.random() * 999999999999)).toString()
       const image = eve.target.files[0]
-      const s3Image: any = await Storage.put(`${id}_${image.name}`, image, { contentType: image.type });
-      const url = `https://${process.env.s3Bucket}.s3-${process.env.s3BucketRegion}.amazonaws.com/public/${s3Image.key}`;
-      const withData = { input: { id, url } }
+      const id = Math.floor(Math.random() * 999999999999)
+      const exception = image.name.split('.')[1]
+      const key = `${id}.${exception}`
+      const withData = { input: { id, key } }
+      await Storage.put(key, image, { contentType: image.type })
       await API.graphql(graphqlOperation(createImage, withData))
     } catch (err) {
       console.log(err)
@@ -85,8 +86,8 @@ const Home: NextPage = () => {
 
   const deleteItem = async (image: ImageType) => {
     try {
-      await Storage.remove(image.url, { level: 'public' });
       const withData = { input: { id: image.id } }
+      await Storage.remove(image.key, { level: 'public' });
       await API.graphql(graphqlOperation(deleteImage, withData))
     } catch (err) {
       console.log(err)
@@ -97,14 +98,14 @@ const Home: NextPage = () => {
     <div className={styles.home}>
       <div className={styles.home_head}>
         <div className={styles.home_form}>
-          <input type="file" onChange={(eve) => createItem(eve)}/>
+          <input type="file" accept="image/*" onChange={(eve) => createItem(eve)}/>
         </div>
       </div>
       <div className={styles.home_body}>
         <ul className={styles.home_images}>
           {images.map((image) => (
             <li key={image.id}>
-              <img src={image.url} alt=""/>
+              <img src={`https://${process.env.s3Bucket}.s3-${process.env.s3BucketRegion}.amazonaws.com/public/${image.key}`} alt=""/>
               <button onClick={() => deleteItem(image)}>deleteItem</button>
             </li>
           ))}

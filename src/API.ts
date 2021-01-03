@@ -4,11 +4,11 @@
 
 export type CreateImageInput = {
   id?: string | null,
-  url: string,
+  key: string,
 };
 
 export type ModelImageConditionInput = {
-  url?: ModelStringInput | null,
+  key?: ModelStringInput | null,
   and?: Array< ModelImageConditionInput | null > | null,
   or?: Array< ModelImageConditionInput | null > | null,
   not?: ModelImageConditionInput | null,
@@ -56,7 +56,7 @@ export type ModelSizeInput = {
 
 export type UpdateImageInput = {
   id: string,
-  url?: string | null,
+  key?: string | null,
 };
 
 export type DeleteImageInput = {
@@ -65,7 +65,7 @@ export type DeleteImageInput = {
 
 export type ModelImageFilterInput = {
   id?: ModelIDInput | null,
-  url?: ModelStringInput | null,
+  key?: ModelStringInput | null,
   and?: Array< ModelImageFilterInput | null > | null,
   or?: Array< ModelImageFilterInput | null > | null,
   not?: ModelImageFilterInput | null,
@@ -96,7 +96,7 @@ export type CreateImageMutation = {
   createImage:  {
     __typename: "Image",
     id: string,
-    url: string,
+    key: string,
     createdAt: string,
     updatedAt: string,
     owner: string | null,
@@ -112,7 +112,7 @@ export type UpdateImageMutation = {
   updateImage:  {
     __typename: "Image",
     id: string,
-    url: string,
+    key: string,
     createdAt: string,
     updatedAt: string,
     owner: string | null,
@@ -128,7 +128,7 @@ export type DeleteImageMutation = {
   deleteImage:  {
     __typename: "Image",
     id: string,
-    url: string,
+    key: string,
     createdAt: string,
     updatedAt: string,
     owner: string | null,
@@ -143,7 +143,7 @@ export type GetImageQuery = {
   getImage:  {
     __typename: "Image",
     id: string,
-    url: string,
+    key: string,
     createdAt: string,
     updatedAt: string,
     owner: string | null,
@@ -162,7 +162,7 @@ export type ListImagesQuery = {
     items:  Array< {
       __typename: "Image",
       id: string,
-      url: string,
+      key: string,
       createdAt: string,
       updatedAt: string,
       owner: string | null,
@@ -179,7 +179,7 @@ export type OnCreateImageSubscription = {
   onCreateImage:  {
     __typename: "Image",
     id: string,
-    url: string,
+    key: string,
     createdAt: string,
     updatedAt: string,
     owner: string | null,
@@ -194,7 +194,7 @@ export type OnUpdateImageSubscription = {
   onUpdateImage:  {
     __typename: "Image",
     id: string,
-    url: string,
+    key: string,
     createdAt: string,
     updatedAt: string,
     owner: string | null,
@@ -209,7 +209,7 @@ export type OnDeleteImageSubscription = {
   onDeleteImage:  {
     __typename: "Image",
     id: string,
-    url: string,
+    key: string,
     createdAt: string,
     updatedAt: string,
     owner: string | null,
