@@ -76,3 +76,25 @@ p {
 * {
   box-sizing: border-box;
 }
+
+.navigation {
+  width: 48px;
+  position: fixed;
+  top: 64px;
+  left: 64px;
+  z-index: 2;
+  ul {
+    li {
+      font-size: 24px;
+      cursor: pointer;
+    }
+    li + li {
+      margin: 24px 0 0 0;
+    }
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}

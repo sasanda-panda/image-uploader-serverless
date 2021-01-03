@@ -158,3 +158,7 @@ const Profile: NextPage = () => {
 }
 
 export default Profile
+
+// TODO:
+// スタリング
+// publish

@@ -148,6 +148,3 @@ const Home: NextPage = () => {
 }
 
 export default Home
-
-// TODO:
-// styleの調整

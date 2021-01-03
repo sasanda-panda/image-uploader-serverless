@@ -1,0 +1,54 @@
+.profile {
+  margin: 0 auto;
+  padding: 64px 0;
+  width: 720px;
+  &_head {
+    div + div {
+      margin: 24px 0 0 0;
+    }
+    input {
+      padding: 16px 12px;
+      width: 100%;
+      border: 2px solid #2E294E;
+      border-radius: 4px;
+      color: #2E294E;
+      background-color: #FFD400;
+      font-size: 16px;
+      letter-spacing: 0.025em;
+      &::placeholder {
+        color: rgba(#2E294E, 0.5)
+      }
+    }
+    dl {
+      display: flex;
+      color: #2E294E;
+      dt {
+        width: 240px;
+      }
+      dd {
+        width: 480px;
+        font-weight: 700;
+      }
+    }
+    dl + dl {
+      margin: 24px 0 0 0;
+    }
+  }
+  &_body {
+    margin: 24px 0 0 0;
+    button {
+      margin: 0 12px 0 0;
+      padding: 14px 10px;
+      color: #FFD400;
+      background-color: #2E294E;
+      border: 2px solid #2E294E;
+      border-radius: 4px;
+      font-size: 16px;
+      letter-spacing: 0.025em;
+    }
+    button + button {
+      color: #2E294E;
+      background-color: #FFD400;
+    }
+  }
+}
